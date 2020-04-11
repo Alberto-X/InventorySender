@@ -16,8 +16,8 @@ end
 
 GLOBAL.sendtoplayer = function(from, target)
 	local item = from.components.inventory:GetItemInSlot(15)
-	if GLOBAL.AllPlayers[target] ~= nil and item ~= nil then
-		GLOBAL.AllPlayers[target].components.inventory:GiveItem(from.components.inventory:RemoveItemBySlot(15))
+	if GLOBAL.UserToPlayer(target) ~= nil and item ~= nil then
+		GLOBAL.UserToPlayer(target).components.inventory:GiveItem(from.components.inventory:RemoveItemBySlot(15))
 	end
 end
 
